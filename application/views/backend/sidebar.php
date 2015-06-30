@@ -13,17 +13,17 @@
                             </div>
                             <!-- /input-group -->
                         </li>
-                        <li>
-                            <a href="<?php echo base_url('dashboard/home');?>"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                        <li <?php if ($this->uri->segment(2)=='home' OR $this->uri->segment(2)=='') echo 'class="active"'; ?>>
+                            <a <?php if ($this->uri->segment(2)=='home' OR $this->uri->segment(2)=='') echo 'class="active"'; ?> href="<?php echo base_url('dashboard/home');?>"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
-                        <li>
+                        <li <?php if ($this->uri->segment(2)=='request') echo 'class="active"'; ?>>
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Request<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="<?php echo base_url('dashboard/request'); ?>">View Request</a>
+                                    <a <?php if ($this->uri->segment(2)=='request' AND $this->uri->segment(3)=='view') echo 'class="active"'; ?> href="<?php echo base_url('dashboard/request'); ?>">View Request</a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo base_url('dashboard/request/rejected'); ?>">Rejected</a>
+                                    <a <?php if ($this->uri->segment(2)=='request' AND $this->uri->segment(3)=='rejected') echo 'class="active"'; ?> href="<?php echo base_url('dashboard/request/rejected'); ?>">Rejected</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -31,17 +31,17 @@
                         <li>
                             <a href="<?php echo base_url('dashboard/theme'); ?>"><i class="fa fa-table fa-fw"></i> View Themes</a>
                         </li>
-                        
-                        <li>
+
+                        <li <?php if ($this->uri->segment(2)=='order' OR $this->uri->segment(2)=='payment') echo 'class="active"'; ?>>
                             <a href="#"><i class="fa fa-wrench fa-fw"></i> Order<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="<?php echo base_url('dashboard/order'); ?>">View Order</a>
+                                    <a <?php if ($this->uri->segment(2)=='order' AND $this->uri->segment(3)=='view') echo 'class="active"'; ?> href="<?php echo base_url('dashboard/order'); ?>">View Order</a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo base_url('dashboard/payment'); ?>">View Payments</a>
+                                    <a <?php if ($this->uri->segment(2)=='payment' AND $this->uri->segment(3)=='view') echo 'class="active"'; ?> href="<?php echo base_url('dashboard/payment'); ?>">View Payments</a>
                                 </li>
-                                
+
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
@@ -53,7 +53,7 @@
                                 </li>
                             </li>
                         </ul>
-                                
+
                         <li>
                             <a href="#"><i class="fa fa-files-o fa-fw"></i> Developer<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
@@ -101,7 +101,7 @@
                                 <li>
                                     <a href="blank.html">Profile</a>
                                 </li>
-                                
+
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
